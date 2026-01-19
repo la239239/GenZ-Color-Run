@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://genzcolorrun.netlify.app/sitemap.xml
