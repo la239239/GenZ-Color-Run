@@ -4,47 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GenZ Color Run 2026 - Mouscron</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
     <nav>
-        <div class="logo">GenZ <span>Color Run</span></div>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="#inscription">Inscription</a></li>
-            <li><a href="#sponsors">Sponsors</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="logo">GenZ <span>Color Run</span></div>
+    
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+        <li><a href="sponsors.html">Sponsors</a></li>
+        <li><a href="parcours.html">Parcours</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
 
     <header class="hero">
+    <div class="hero-content">
         <h1>5 JUILLET 2026</h1>
-        <p>Plaine de Neckere, Mouscron | 10h00</p>
+        <p class="location">Plaine de Neckere, Mouscron | 10h00</p>
+        
         <div id="countdown" class="countdown">
+            <div class="time-box">
+                <span id="days" class="time-number">000</span>
+                <span class="time-label">Jours</span>
             </div>
+            <div class="time-box">
+                <span id="hours" class="time-number">00</span>
+                <span class="time-label">Heures</span>
+            </div>
+            <div class="time-box">
+                <span id="minutes" class="time-number">00</span>
+                <span class="time-label">Min</span>
+            </div>
+            <div class="time-box">
+                <span id="seconds" class="time-number">00</span>
+                <span class="time-label">Sec</span>
+            </div>
+        </div>
+
         <a href="inscription.html" class="btn-main">Je m'inscris !</a>
-    </header>
+    </div>
+</header>
 
     <section class="presentation">
         <h2>Le Projet</h2>
         <p>Préparez-vous pour l'événement le plus coloré de Mouscron ! Que vous soyez coureur du dimanche ou athlète confirmé, choisissez entre notre parcours de <strong>5km</strong> ou <strong>10km</strong> et traversez des nuages de pigments biodégradables.</p>
     </section>
+    
+    <section class="carousel-section">
+    <h2>Le Club en Action</h2>
+    
+    <div class="carousel-container">
+        <button class="carousel-btn prev-btn">❮</button>
+        <button class="carousel-btn next-btn">❯</button>
 
-    <section class="carousel-container">
-        <h2>Le Club en Action</h2>
-        <div class="carousel">
-            <div class="slides">
-                <img src="https://via.placeholder.com/800x400/FF007F/FFFFFF?text=Photo+Club+1" alt="Club 1">
-                <img src="https://via.placeholder.com/800x400/00D4FF/FFFFFF?text=Photo+Club+2" alt="Club 2">
-                <img src="https://via.placeholder.com/800x400/CCFF00/000000?text=Photo+Club+3" alt="Club 3">
+        <div class="carousel-window">
+            <div class="carousel-track">
+                <div class="slide"><img src="assets/image_1.JPG" alt="Action 1"></div>
+                <div class="slide"><img src="assets/image_3.JPG" alt="Action 2"></div>
+                <div class="slide"><img src="assets/image_4.JPG" alt="Action 3"></div>
+                <div class="slide"><img src="assets/image_5.JPG" alt="Action 4"></div>
+                <div class="slide"><img src="assets/image_6.JPG" alt="Action 5"></div>
+                <div class="slide"><img src="assets/image_7.png" alt="Action 6"></div>
+                <div class="slide"><img src="assets/image_8.jpg" alt="Action 7"></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <footer>
         <p>&copy; 2026 GenZ Color Run - Mouscron</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/home.js"></script>
 </body>
 </html>

@@ -1,0 +1,159 @@
+/* --- inscription.css --- */
+
+/* 1. HEADER DE PAGE (Plus petit que le Hero de l'accueil) */
+.page-header {
+    height: 40vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x600'); /* Mets une photo de coureurs ici */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid var(--secondary);
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.page-header span {
+    color: var(--primary); /* Ou dégradé si tu veux */
+}
+
+/* 2. CONTENEUR DES PRIX */
+.pricing-section {
+    padding: 80px 20px;
+    background-color: var(--dark);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Espace entre les cartes */
+    flex-wrap: wrap; /* Pour passer l'un sous l'autre sur mobile */
+    margin-bottom: 80px;
+}
+
+/* 3. DESIGN DES CARTES */
+.price-card {
+    background: #252525; /* Un peu plus clair que le fond noir */
+    border-radius: 20px;
+    padding: 40px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+/* Animation au survol */
+.price-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Style Spécifique 5KM (ROSE) */
+.card-pink {
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.2);
+}
+.card-pink:hover {
+    box-shadow: 0 0 30px rgba(255, 0, 127, 0.6);
+}
+.card-pink .distance { color: var(--primary); }
+
+/* Style Spécifique 10KM (BLEU) */
+.card-blue {
+    border: 2px solid var(--secondary);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+}
+.card-blue:hover {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+}
+.card-blue .distance { color: var(--secondary); }
+
+/* Contenu des cartes */
+.card-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.distance {
+    font-size: 3.5rem;
+    font-weight: 900;
+    font-family: 'Orbitron', sans-serif; /* Rappel police compteur */
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.currency { font-size: 1.5rem; vertical-align: top; }
+.period { font-size: 0.9rem; color: #aaa; display: block; font-weight: normal; }
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left; /* Plus lisible */
+}
+
+.features li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #ddd;
+}
+
+.features li strong { color: white; }
+
+/* Bouton Spécifique Carte */
+.btn-card {
+    display: block;
+    padding: 15px 0;
+    width: 100%;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s;
+}
+
+.card-pink .btn-card { background: var(--primary); }
+.card-pink .btn-card:hover { background: #d4006a; }
+
+.card-blue .btn-card { background: var(--secondary); color: var(--dark); }
+.card-blue .btn-card:hover { background: #00ace6; }
+
+
+/* 4. BOITE D'INFO EN BAS */
+.info-box {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 5px solid var(--accent); /* Vert fluo pour attirer l'attention */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info-box h3 { color: var(--accent); margin-top: 0; }
+.info-box hr { border: 0; border-top: 1px solid rgba(255,255,255,0.2); margin: 20px 0; }
+.highlight-time { color: var(--accent); font-weight: bold; font-size: 1.2rem; }
+.small-note { font-size: 0.9rem; color: #888; font-style: italic; margin-top: 10px; }
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .page-header { height: 30vh; }
+    .page-header h1 { font-size: 2rem; }
+    .price-card { width: 100%; max-width: 350px; } /* Prend toute la largeur sur mobile */
+}

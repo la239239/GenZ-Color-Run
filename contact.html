@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - GenZ Color Run 2026</title>
+    
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/contact.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">GenZ <span>Color Run</span></div>
+        <div class="hamburger">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="inscription.html">Inscription</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="parcours.html">Parcours</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>Une <span>Question ?</span></h1>
+        <p>On est là pour te répondre !</p>
+    </header>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            
+            <div class="form-wrapper">
+                <h2>Envoyez-nous un message</h2>
+                <form action="#" method="POST" class="contact-form">
+                    
+                    <div class="input-group">
+                        <input type="text" id="name" required placeholder=" ">
+                        <label for="name">Ton Nom</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Ton Email</label>
+                    </div>
+
+                    <div class="input-group">
+                        <select id="subject-select">
+                            <option value="info">Information Générale</option>
+                            <option value="inscription">Problème Inscription</option>
+                            <option value="sponsor">Devenir Sponsor</option> <option value="benevole">Devenir Bénévole</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <textarea id="message" rows="5" required placeholder=" "></textarea>
+                        <label for="message">Ton Message</label>
+                    </div>
+
+                    <button type="submit" class="btn-main btn-submit">Envoyer</button>
+                </form>
+            </div>
+
+            <div class="info-wrapper">
+                <div class="info-content">
+                    <h2>Infos Pratiques</h2>
+                    <p>📧 <strong>Email :</strong><br> <a href="mailto:runningmouscron@gmail.com">runningmouscron@gmail.com</a></p>
+                    <p>📍 <strong>Lieu :</strong><br> Plaine de Neckere, Mouscron</p>
+                    
+                    <div class="social-links">
+                        <h3>Suis-nous !</h3>
+                        <a href="#" class="social-btn instagram">Instagram</a>
+                        <a href="#" class="social-btn facebook">Facebook</a>
+                    </div>
+                </div>
+
+                <div class="map-container">
+    <iframe 
+        src="https://maps.google.com/maps?q=Plaine+de+Neckere,+Mouscron&t=h&z=15&ie=UTF8&iwloc=&output=embed" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+</div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 GenZ Color Run - Mouscron</p>
+    </footer>
+
+    <script src="script/script.js"></script>
+    <script src="script/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Parcours - GenZ Color Run 2026</title>
+    
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/parcours.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">GenZ <span>Color Run</span></div>
+        <div class="hamburger">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="inscription.html">Inscription</a></li>
+            <li><a href="parcours.html" class="active">Parcours</a></li> <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>Le Terrain <span>de Jeu</span></h1>
+        <p>Découvre ce qui t'attend à la Plaine de Neckere</p>
+    </header>
+
+   <section class="courses-section">
+        
+        <div class="course-card pink-theme">
+            <div class="map-visual">
+                <iframe 
+                    src="https://www.google.com/maps/d/u/0/embed?mid=1s3TofRD3W0ECl-9PewygvCYHSb6dcVs&ehbc=2E312F">
+                </iframe>
+                <span class="badge">Accessible à tous</span>
+            </div>
+            <div class="course-info">
+                <h2>Le Fun Run <span>(5km)</span></h2>
+                <p>Un parcours plat et festif, idéal pour les familles, les débutants ou ceux qui veulent juste profiter des jets de couleurs sans pression.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="icon">📏</span>
+                        <span class="value">5.2 km</span>
+                        <span class="label">Distance</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="icon">⛰️</span>
+                        <span class="value">15 m</span>
+                        <span class="label">Dénivelé (D+)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="icon">💧</span>
+                        <span class="value">1</span>
+                        <span class="label">Ravito (Arrivée)</span>
+                    </div>
+                </div>
+
+                <a href="assets/GenZColorRun-5KM.gpx" download class="btn-gpx">
+                    📥 Télécharger le GPX
+                </a>
+            </div>
+        </div>
+
+        <div class="course-card blue-theme">
+            <div class="map-visual">
+                <iframe 
+                    src="https://www.google.com/maps/d/u/0/embed?mid=1tzhp0NZcCNMGsVDaYRuDlMTbP9gDf2w&ehbc=2E312F">
+                </iframe>
+                <span class="badge">Challenge Sportif</span>
+            </div>
+            <div class="course-info">
+                <h2>Le Challenge <span>(10km)</span></h2>
+                <p>Une boucle double avec une extension vers le parc communal. Parfait pour chasser le chrono tout en restant fun. N'oublie pas le ravito gourmand !</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="icon">📏</span>
+                        <span class="value">10.1 km</span>
+                        <span class="label">Distance</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="icon">⛰️</span>
+                        <span class="value">45 m</span>
+                        <span class="label">Dénivelé (D+)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="icon">🍪</span>
+                        <span class="value">2</span>
+                        <span class="label">Ravitos</span>
+                    </div>
+                </div>
+
+                <a href="assets/GenZColorRun-10KM.gpx" download class="btn-gpx">
+                    📥 Télécharger le GPX
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="signage-info">
+        <div class="info-box">
+            <h3>Signalisation & Sécurité</h3>
+            <p>Le parcours est entièrement balisé avec des flèches au sol et de la rubalise.</p>
+            <ul>
+                <li><span style="color:var(--primary)">⬆️ Flèches Roses</span> : Parcours 5km</li>
+                <li><span style="color:var(--secondary)">⬆️ Flèches Bleues</span> : Parcours 10km</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 GenZ Color Run - Mouscron</p>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+</html>

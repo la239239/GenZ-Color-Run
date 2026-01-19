@@ -1,0 +1,200 @@
+/* --- contact.css --- */
+
+/* 1. HEADER DE PAGE (Style commun) */
+.page-header {
+    height: 40vh;
+    /* Tu peux changer l'image de fond ici */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x600'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid var(--accent); /* Vert fluo */
+}
+
+.page-header h1 { 
+    font-size: 3rem; 
+    text-transform: uppercase; 
+    margin-bottom: 10px; 
+}
+
+.page-header span { 
+    color: var(--accent); 
+}
+
+/* 2. SECTION PRINCIPALE */
+.contact-section {
+    padding: 60px 20px;
+    background-color: var(--dark);
+    min-height: 60vh;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex; /* Met les blocs côte à côte */
+    gap: 50px;
+    flex-wrap: wrap; /* Permet de passer l'un sous l'autre sur mobile */
+}
+
+/* --- 3. FORMULAIRE (GAUCHE) --- */
+.form-wrapper {
+    flex: 1; /* Prend la moitié de l'espace */
+    min-width: 300px;
+    background: #252525; /* Fond gris foncé */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+}
+
+.form-wrapper h2 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 30px;
+    border-left: 4px solid var(--primary); /* Barre rose à gauche */
+    padding-left: 15px;
+}
+
+/* Style des champs (Input) */
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input, 
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: white;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #555; /* Ligne grise en bas */
+    outline: none;
+    transition: border-color 0.3s;
+    font-family: inherit;
+    box-sizing: border-box; 
+}
+
+.input-group textarea { resize: vertical; }
+
+/* Animation du Label */
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 1rem;
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s ease all;
+}
+
+/* Quand on clique ou qu'il y a du texte : le label monte et change de couleur */
+.input-group input:focus, .input-group input:not(:placeholder-shown),
+.input-group textarea:focus, .input-group textarea:not(:placeholder-shown),
+.input-group select:focus {
+    border-bottom-color: var(--secondary); /* Devient bleu */
+}
+
+.input-group input:focus ~ label, .input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:focus ~ label, .input-group textarea:not(:placeholder-shown) ~ label {
+    top: -20px;
+    font-size: 0.8rem;
+    color: var(--secondary);
+}
+
+/* Style spécifique pour le SELECT (Menu déroulant) */
+.input-group select {
+    cursor: pointer;
+}
+.input-group select option {
+    background: var(--dark);
+    color: white;
+    padding: 10px;
+}
+
+.btn-submit {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* --- MODIFICATION COLONNE DROITE (Pour que la map remplisse tout) --- */
+.info-wrapper {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* On s'assure que la colonne prend toute la hauteur disponible */
+    height: auto; 
+    justify-content: space-between; 
+}
+
+/* La carte prend TOUT l'espace restant (flex: 1) */
+.map-container {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid var(--secondary);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+    
+    /* C'EST ICI LE CHANGEMENT */
+    flex: 1; /* Grandit pour remplir le vide */
+    min-height: 300px; /* Taille minimum garantie */
+    background: #000;
+}
+
+.info-content {
+    background: rgba(255,255,255,0.05); /* Très légèrement clair */
+    padding: 30px;
+    border-radius: 20px;
+    color: #ccc;
+    border: 1px solid #333;
+}
+
+.info-content h2 { color: white; margin-top: 0; }
+.info-content p { margin-bottom: 15px; line-height: 1.6; }
+.info-content a { color: var(--secondary); text-decoration: none; font-weight: bold;}
+
+.social-links { margin-top: 30px; }
+.social-links h3 { color: white; font-size: 1.1rem; margin-bottom: 15px; }
+
+/* Boutons Réseaux Sociaux */
+.social-btn {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+}
+.social-btn:hover { transform: translateY(-3px); }
+
+.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.facebook { background: #1877f2; }
+
+/* --- MODIFICATION TEXTAREA (Auto-ajustement) --- */
+.input-group textarea { 
+    resize: none; /* On empêche le redimensionnement manuel moche */
+    
+    /* CSS MODERNE : S'ajuste automatiquement au texte */
+    field-sizing: content; 
+    min-height: 120px; /* Hauteur de base */
+    max-height: 400px; /* Pas plus grand que ça */
+}
+
+/* 6. RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+    .page-header h1 { font-size: 2rem; }
+    .contact-container { flex-direction: column; } /* Les blocs passent l'un sous l'autre */
+    .map-container { height: 250px; }
+}

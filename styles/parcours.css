@@ -1,0 +1,218 @@
+/* --- parcours.css --- */
+
+/* HEADER (Standard) */
+.page-header {
+    height: 40vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x600'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+}
+.page-header h1 { font-size: 3rem; text-transform: uppercase; margin-bottom: 10px; }
+/* MODIFICATION ICI : Orange vif */
+.page-header span { 
+    color: #ff8800; /* Orange Color Run */
+}
+
+/* IMAGE/CARTE A GAUCHE */
+.map-visual {
+    flex: 1;
+    min-width: 300px;
+    height: 400px; /* On force une hauteur fixe pour bien voir la carte */
+    position: relative;
+    overflow: hidden;
+    background: #000; /* Fond noir pendant le chargement */
+}
+
+/* Style de l'iframe Google Maps */
+.map-visual iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    /* On retire le filtre gris des images précédentes si tu en avais un */
+    display: block; 
+}
+
+/* On garde le badge par dessus la carte */
+.badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 8px 15px;
+    background: var(--primary); /* Fond rose par défaut */
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    z-index: 10; /* Important pour être au dessus de la map */
+}
+
+/* Couleurs spécifiques des badges */
+.pink-theme .badge { background: var(--primary); }
+.blue-theme .badge { background: var(--secondary); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .course-card { flex-direction: column; }
+    .map-visual { height: 300px; } /* Un peu moins haut sur mobile */
+}
+
+/* SECTION PRINCIPALE */
+.courses-section {
+    padding: 80px 20px;
+    background-color: var(--dark);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CARTE DE PARCOURS (Le bloc entier) */
+.course-card {
+    display: flex;
+    background: #252525;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 80px; /* Espace entre le 5 et le 10km */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGE/CARTE A GAUCHE */
+.map-visual {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.course-card:hover .map-visual img {
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 5px 15px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border: 1px solid white;
+}
+
+/* INFOS A DROITE */
+.course-info {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.course-info h2 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: white;
+}
+
+.course-info p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* GRILLE DE STATS */
+.stats-grid {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 20px 0;
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+}
+
+.stat-item .icon { font-size: 1.5rem; display: block; margin-bottom: 5px; }
+.stat-item .value { display: block; font-size: 1.2rem; font-weight: bold; color: white; }
+.stat-item .label { font-size: 0.8rem; color: #888; text-transform: uppercase; }
+
+
+/* BOUTON GPX */
+.btn-gpx {
+    display: inline-block;
+    text-align: center;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--dark);
+    transition: 0.3s;
+}
+
+/* THÈMES COULEURS (PINK vs BLUE) */
+
+/* 5KM - Pink */
+.pink-theme { border-left: 5px solid var(--primary); }
+.pink-theme h2 span { color: var(--primary); }
+.pink-theme .btn-gpx { background: var(--primary); color: white; }
+.pink-theme .btn-gpx:hover { background: #d4006a; box-shadow: 0 0 15px var(--primary); }
+
+/* 10KM - Blue */
+.blue-theme { border-left: 5px solid var(--secondary); }
+.blue-theme h2 span { color: var(--secondary); }
+.blue-theme .btn-gpx { background: var(--secondary); color: var(--dark); }
+.blue-theme .btn-gpx:hover { background: #00ace6; box-shadow: 0 0 15px var(--secondary); }
+
+
+/* SIGNALISATION EN BAS */
+.signage-info {
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.info-box {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.info-box h3 { color: var(--accent); margin-top: 0; }
+.info-box ul { list-style: none; padding: 0; margin-top: 20px; font-size: 1.1rem; }
+.info-box li { margin: 10px 0; font-weight: bold; }
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .course-card { flex-direction: column; } /* L'image passe au dessus */
+    .map-visual { height: 250px; }
+    .course-info h2 { font-size: 2rem; }
+    .stats-grid { gap: 10px; }
+    .stat-item .value { font-size: 1rem; }
+}

@@ -1,0 +1,245 @@
+/* --- sponsors.css --- */
+
+/* On réutilise le style du header de page (si tu ne l'as pas mis dans style.css, laisse-le ici) */
+.page-header {
+    height: 40vh;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1920x600'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid var(--primary); /* Rose pour changer un peu */
+}
+
+.page-header h1 { font-size: 3rem; text-transform: uppercase; margin-bottom: 10px; }
+.page-header span { color: var(--secondary); }
+
+
+/* SECTION PRINCIPALE */
+.sponsors-section {
+    padding: 60px 20px;
+    background-color: var(--dark);
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sponsors-category h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* LE SÉPARATEUR */
+.divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+    margin: 60px auto;
+    width: 80%;
+}
+
+/* --- EFFET FLIP CARD 3D --- */
+
+/* GRILLE DES LOGOS */
+.logo-grid {
+    display: grid;
+    gap: 30px;
+    justify-content: center;
+}
+
+.main-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.standard-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* 1. LE CONTENEUR PRINCIPAL (La scène 3D) */
+.sponsor-flip-card {
+    background-color: transparent;
+    perspective: 1000px; /* Donne la profondeur 3D */
+    cursor: pointer;
+}
+
+/* Hauteur différente selon la catégorie */
+.main-grid .sponsor-flip-card { height: 200px; }
+.standard-grid .sponsor-flip-card { height: 150px; }
+
+
+/* 2. L'ÉLÉMENT QUI TOURNE (Le plateau tournant) */
+.sponsor-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s; /* Durée de l'animation */
+    transform-style: preserve-3d; /* Indispensable pour la 3D */
+}
+
+/* L'ACTION : Au survol, on tourne de 180 degrés */
+.sponsor-flip-card:hover .sponsor-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* 3. LES DEUX FACES (AVANT et ARRIÈRE) */
+.sponsor-front, .sponsor-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Cache le dos de l'image quand elle est retournée */
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- FACE AVANT (LOGO) --- */
+.sponsor-front {
+    background-color: white;
+}
+
+.sponsor-front img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain; /* Le logo ne doit pas être coupé */
+}
+
+/* --- FACE ARRIÈRE (PHOTO) --- */
+.sponsor-back {
+    background-color: var(--dark);
+    color: white;
+    transform: rotateY(180deg); /* Elle est déjà retournée au départ */
+    border: 2px solid var(--secondary); /* Bordure bleue pour le style */
+}
+
+/* --- AJOUT POUR LE NOM DU SPONSOR --- */
+.sponsor-back {
+    position: relative; /* Sécurité pour le positionnement absolu */
+}
+
+.sponsor-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px 5px;
+    background: rgba(0, 0, 0, 0.7); /* Fond noir semi-transparent */
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+    /* Petit effet pour ne pas gêner les coins arrondis */
+    border-bottom-left-radius: 13px; 
+    border-bottom-right-radius: 13px;
+}
+
+.sponsor-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La photo remplit tout le cadre */
+    opacity: 0.8; /* Légèrement sombre pour le style */
+}
+
+/* Petit effet néon quand la carte est retournée */
+.sponsor-flip-card:hover .sponsor-front, 
+.sponsor-flip-card:hover .sponsor-back {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+}
+
+/* GRILLE DES LOGOS */
+.logo-grid {
+    display: grid;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Grille pour les GROS sponsors (3 colonnes max) */
+.main-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Grille pour les PETITS sponsors (plus serrés, 4 colonnes max) */
+.standard-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+/* ITEM SPONSOR */
+.sponsor-item {
+    background: #ffffff; /* Fond blanc pour bien voir les logos */
+    border-radius: 10px;
+    padding: 20px;
+    height: 150px; /* Hauteur fixe pour uniformiser */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.sponsor-item img {
+    max-width: 100%;
+    max-height: 100%;
+    
+    /* MAGIE : Noir et blanc par défaut */
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.4s ease;
+}
+
+/* EFFET HOVER */
+.sponsor-item:hover {
+    transform: translateY(-5px); /* Monte un peu */
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3); /* Ombre bleue */
+}
+
+.sponsor-item:hover img {
+    filter: grayscale(0%); /* Revient en couleur */
+    opacity: 1;
+    transform: scale(1.05); /* Zoom léger */
+}
+
+/* SECTION APPEL A L'ACTION (BAS DE PAGE) */
+.become-sponsor {
+    padding: 80px 20px;
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.content-box {
+    max-width: 700px;
+    margin: 0 auto;
+    border: 2px dashed var(--accent); /* Bordure pointillée vert fluo */
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.content-box h2 {
+    color: var(--accent);
+    margin-top: 0;
+}
+
+.content-box p {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .page-header h1 { font-size: 2rem; }
+    .standard-grid { grid-template-columns: repeat(2, 1fr); } /* 2 par ligne sur mobile */
+    .sponsor-item { height: 120px; padding: 10px; }
+}
