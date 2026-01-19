@@ -45,8 +45,14 @@
             
             <div class="form-wrapper">
                 <h2>Envoyez-nous un message</h2>
-    <form name="contact-final" method="POST" action="/success.html" data-netlify="true" class="contact-form">
+    <form name="contact-2026" method="POST" action="/success.html" netlify>
     
+    <input type="hidden" name="form-name" value="contact-2026" />
+
+    <p class="hidden" style="display:none;">
+        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+    </p>
+
     <div class="input-group">
         <input type="text" id="name" name="nom" required placeholder=" ">
         <label for="name">Ton Nom</label>
@@ -72,6 +78,7 @@
     </div>
 
     <button type="submit" class="btn-main btn-submit">Envoyer 🚀</button>
+
 </form>
             </div>
 
