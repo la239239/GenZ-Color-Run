@@ -1,0 +1,70 @@
+/* --- legales.css --- */
+
+/* HEADER (Gris neutre pour le légal) */
+.page-header {
+    height: 30vh; /* Un peu plus petit que les autres pages */
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1920x600'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+.page-header h1 { 
+    font-size: 2.5rem; 
+    text-transform: uppercase; 
+    margin-bottom: 5px; 
+}
+
+.page-header span { color: #ccc; }
+
+/* CONTENU */
+.legal-section {
+    padding: 60px 20px;
+    background-color: var(--dark);
+    max-width: 800px;
+    margin: 0 auto;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.legal-block {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 30px;
+}
+
+.legal-block:last-child {
+    border-bottom: none;
+}
+
+.legal-block h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.legal-block h3 {
+    color: var(--primary); /* Rose pour les sous-titres */
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.legal-block p {
+    margin-bottom: 15px;
+}
+
+.legal-block a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.legal-block a:hover {
+    text-decoration: underline;
+}

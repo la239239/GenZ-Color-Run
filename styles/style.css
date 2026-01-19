@@ -125,12 +125,48 @@ nav span {
     .nav-links li a { font-size: 1.5rem; }
 }
 
-/* 3. FOOTER */
+/* --- FOOTER --- */
 footer {
+    background-color: #111;
+    color: #777;
+    padding: 30px 20px;
     text-align: center;
-    padding: 20px;
-    background: rgba(0,0,0,0.8);
-    margin-top: 50px;
+    border-top: 1px solid #222;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espace entre le copyright et le lien */
+    flex-wrap: wrap; /* Pour que ça passe à la ligne sur mobile */
+}
+
+.footer-link {
+    color: var(--secondary); /* Bleu clair (ou ta couleur secondaire) */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-link strong {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.separator {
+    color: #444;
+}
+
+/* Responsive Mobile : On enlève le séparateur et on empile */
+@media (max-width: 600px) {
+    .separator { display: none; }
+    .footer-content { flex-direction: column; gap: 5px; }
 }
 
 /* 4. BOUTONS GLOBAUX (Utilisable sur inscription aussi) */

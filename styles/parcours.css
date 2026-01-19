@@ -11,12 +11,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #fff700;
 }
 .page-header h1 { font-size: 3rem; text-transform: uppercase; margin-bottom: 10px; }
 /* MODIFICATION ICI : Orange vif */
 .page-header span { 
-    color: #ff8800; /* Orange Color Run */
+    color: #fff700;
 }
 
 /* IMAGE/CARTE A GAUCHE */

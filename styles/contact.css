@@ -162,25 +162,7 @@
 .info-content p { margin-bottom: 15px; line-height: 1.6; }
 .info-content a { color: var(--secondary); text-decoration: none; font-weight: bold;}
 
-.social-links { margin-top: 30px; }
-.social-links h3 { color: white; font-size: 1.1rem; margin-bottom: 15px; }
 
-/* Boutons Réseaux Sociaux */
-.social-btn {
-    display: inline-block;
-    margin-right: 10px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: transform 0.2s;
-}
-.social-btn:hover { transform: translateY(-3px); }
-
-.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-.facebook { background: #1877f2; }
 
 /* --- MODIFICATION TEXTAREA (Auto-ajustement) --- */
 .input-group textarea { 
@@ -197,4 +179,75 @@
     .page-header h1 { font-size: 2rem; }
     .contact-container { flex-direction: column; } /* Les blocs passent l'un sous l'autre */
     .map-container { height: 250px; }
+}
+
+
+/* --- Boutons Réseaux Sociaux (UNIFIÉS) --- */
+.social-links { margin-top: 30px; }
+.social-links h3 { color: white; font-size: 1.1rem; margin-bottom: 15px; }
+
+/* Style de base pour TOUS les boutons */
+.social-btn {
+    display: inline-flex; /* Centrage parfait */
+    align-items: center;
+    justify-content: center;
+    
+    margin-right: 10px;
+    margin-bottom: 10px; /* Important si ça passe à la ligne sur mobile */
+    
+    padding: 12px 25px; /* Un peu plus grand pour le doigt */
+    border-radius: 50px; /* Bien arrondis */
+    
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    
+    /* Animation fluide pour tout le monde */
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+    border: none; /* Pas de bordure pour l'unité */
+}
+
+/* Effet au survol pour TOUS */
+.social-btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1); /* S'illumine légèrement */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* --- COULEURS SPÉCIFIQUES --- */
+
+/* Instagram : Dégradé Orange/Rose */
+.instagram { 
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
+}
+
+/* Facebook : Bleu officiel */
+.facebook { 
+    background: #1877f2; 
+}
+
+/* TikTok : Dégradé Cyan/Rose (Plus visible que le noir sur fond sombre !) */
+.tiktok { 
+    background: linear-gradient(45deg, #69C9D0, #EE1D52);
+    /* Ou si tu préfères vraiment noir : background: #333; */
+}
+
+
+/* --- MODIFICATION TEXTAREA (Auto-ajustement) --- */
+.input-group textarea { 
+    resize: none; 
+    field-sizing: content; 
+    min-height: 120px; 
+    max-height: 400px; 
+}
+
+/* 6. RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+    .page-header h1 { font-size: 2rem; }
+    .contact-container { flex-direction: column; } 
+    .map-container { height: 300px; } /* Un peu plus haut sur mobile pour bien voir */
+    
+    /* On centre les boutons sociaux sur mobile */
+    .social-links { text-align: center; }
 }

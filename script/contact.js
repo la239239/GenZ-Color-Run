@@ -31,5 +31,18 @@ messageArea.focus();
 messageArea.blur();
             }
         }
+        // 4. SPÉCIAL BÉNÉVOLE : Message avec les bons postes
+            if (sujet === 'benevole' && messageArea) {
+                const benevoleMessage = "Hello ! 👋\n\nJe suis super motivé(e) pour rejoindre la Team GenZ !\n\nJe peux vous aider pour :\n- 🚴 Lièvre (J'ai un vélo électrique)\n- 🎟️ Vente de tickets boissons\n- 🚧 Signaler le parcours\n- 🍺 Tenir le bar / Ravito\n\n(Effacez les lignes inutiles)\n\nDispo le 5 Juillet. À très vite !";
+                
+                messageArea.value = benevoleMessage;
+                
+                // Ajustement hauteur automatique pour que tout le texte soit visible
+                messageArea.style.height = 'auto'; 
+                messageArea.style.height = (messageArea.scrollHeight + 20) + 'px'; 
+
+                messageArea.focus(); 
+                messageArea.blur(); 
+            }
     }
 });

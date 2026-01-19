@@ -7,6 +7,15 @@
     
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/contact.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta name="description" content="GenZ Color Run 2026 à Mouscron : 5km, 10km, musique et poudre colorée ! Rejoins l'événement le plus fun de l'année à la Plaine de Neckere.">
+<meta name="keywords" content="Color Run, Mouscron, Course à pied, 5km, 10km, GenZ, Running Club, Belgique, Fun Run">
+<meta name="author" content="GenZ Running Club">
+
+<meta property="og:title" content="GenZ Color Run 2026 - Mouscron">
+<meta property="og:description" content="Prêt pour la course la plus colorée de l'année ? Inscriptions ouvertes pour le 5km et 10km !">
+<meta property="og:image" content="https://tondomaine.com/images/social-share.jpg"> <meta property="og:url" content="https://www.tondomaine.com">
+<meta property="og:type" content="website">
 </head>
 <body>
 
@@ -20,7 +29,9 @@
             <li><a href="inscription.html">Inscription</a></li>
             <li><a href="sponsors.html">Sponsors</a></li>
             <li><a href="parcours.html">Parcours</a></li>
+            <li><a href="benevoles.html">Bénévoles</a></li>
             <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
         </ul>
     </nav>
 
@@ -34,47 +45,57 @@
             
             <div class="form-wrapper">
                 <h2>Envoyez-nous un message</h2>
-                <form action="#" method="POST" class="contact-form">
-                    
-                    <div class="input-group">
-                        <input type="text" id="name" required placeholder=" ">
-                        <label for="name">Ton Nom</label>
-                    </div>
+                <form name="contact" method="POST" data-netlify="true" class="contact-form">
+    
+    <input type="hidden" name="form-name" value="contact">
 
-                    <div class="input-group">
-                        <input type="email" id="email" required placeholder=" ">
-                        <label for="email">Ton Email</label>
-                    </div>
+    <div class="input-group">
+        <input type="text" id="name" name="nom" required placeholder=" ">
+        <label for="name">Ton Nom</label>
+    </div>
 
-                    <div class="input-group">
-                        <select id="subject-select">
-                            <option value="info">Information Générale</option>
-                            <option value="inscription">Problème Inscription</option>
-                            <option value="sponsor">Devenir Sponsor</option> <option value="benevole">Devenir Bénévole</option>
-                        </select>
-                    </div>
+    <div class="input-group">
+        <input type="email" id="email" name="email" required placeholder=" ">
+        <label for="email">Ton Email</label>
+    </div>
 
-                    <div class="input-group">
-                        <textarea id="message" rows="5" required placeholder=" "></textarea>
-                        <label for="message">Ton Message</label>
-                    </div>
+    <div class="input-group">
+        <select id="subject-select" name="sujet">
+            <option value="info">Information Générale</option>
+            <option value="inscription">Problème Inscription</option>
+            <option value="sponsor">Devenir Sponsor</option>
+            <option value="benevole">Devenir Bénévole</option>
+        </select>
+    </div>
 
-                    <button type="submit" class="btn-main btn-submit">Envoyer</button>
-                </form>
+    <div class="input-group">
+        <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+        <label for="message">Ton Message</label>
+    </div>
+
+    <button type="submit" class="btn-main btn-submit">Envoyer 🚀</button>
+</form>
             </div>
 
             <div class="info-wrapper">
                 <div class="info-content">
-                    <h2>Infos Pratiques</h2>
-                    <p>📧 <strong>Email :</strong><br> <a href="mailto:runningmouscron@gmail.com">runningmouscron@gmail.com</a></p>
-                    <p>📍 <strong>Lieu :</strong><br> Plaine de Neckere, Mouscron</p>
-                    
-                    <div class="social-links">
-                        <h3>Suis-nous !</h3>
-                        <a href="#" class="social-btn instagram">Instagram</a>
-                        <a href="#" class="social-btn facebook">Facebook</a>
-                    </div>
-                </div>
+    <h2>Infos Pratiques</h2>
+    <p>📧 <strong>Email :</strong><br> <a href="mailto:runningmouscron@gmail.com">runningmouscron@gmail.com</a></p>
+    
+    <p>📍 <strong>QG du Club :</strong><br> 
+    Mouscron, Belgique<br>
+    <strong>GenZ Running Club</strong>
+    </p>
+    
+    <div class="social-links">
+        <h3>Suis-nous !</h3>
+        <a href="https://www.instagram.com/runningmouscron?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-btn instagram">Instagram</a>
+        
+        <a href="https://www.facebook.com/groups/651619187902214/" target="_blank" class="social-btn facebook">Facebook</a>
+        
+        <a href="https://www.tiktok.com/@runningmouscron?is_from_webapp=1&sender_device=pc" target="_blank" class="social-btn tiktok">TikTok</a>
+    </div>
+</div>
 
                 <div class="map-container">
     <iframe 
@@ -92,7 +113,13 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 GenZ Color Run - Mouscron</p>
+        <div class="footer-content">
+            <p>&copy; 2026 GenZ Color Run - Mouscron</p>
+            <span class="separator">|</span> 
+            <a href="faq.html" class="footer-link">D'autres questions ? <strong>FAQ</strong></a>
+            <span class="separator">|</span> 
+            <a href="legales.html" class="footer-link">Mentions Légales</a>
+        </div>
     </footer>
 
     <script src="script/script.js"></script>

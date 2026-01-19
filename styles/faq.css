@@ -1,0 +1,105 @@
+/* --- faq.css --- */
+
+/* HEADER (On varie la couleur, ici Violet) */
+.page-header {
+    height: 40vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x600?text=FAQ'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid #9d4edd; /* Violet */
+}
+.page-header h1 { font-size: 3rem; text-transform: uppercase; margin-bottom: 10px; }
+.page-header span { color: #9d4edd; }
+
+/* SECTION FAQ */
+.faq-section {
+    padding: 60px 20px;
+    background-color: var(--dark);
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 60vh;
+}
+
+.faq-category {
+    margin-bottom: 50px;
+}
+
+.faq-category h2 {
+    color: white;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* ITEM FAQ */
+.faq-item {
+    margin-bottom: 15px;
+    background: #252525;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: all 0.3s;
+}
+
+/* LE BOUTON QUESTION */
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px;
+    text-align: left;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.faq-question .arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+}
+
+/* LA RÉPONSE (Cachée par défaut) */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #1a1a1a;
+    padding: 0 20px; /* Padding sur les côtés seulement au début */
+}
+
+.faq-answer p {
+    color: #ccc;
+    line-height: 1.6;
+    padding: 20px 0; /* Le padding vertical est ici pour éviter les sauts */
+    margin: 0;
+}
+
+/* --- ETAT ACTIF (QUAND C'EST OUVERT) --- */
+.faq-item.active {
+    border-color: #9d4edd; /* Bordure violette */
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.2);
+}
+
+.faq-item.active .faq-question {
+    color: #9d4edd;
+}
+
+.faq-item.active .arrow {
+    transform: rotate(180deg); /* La flèche tourne */
+}
