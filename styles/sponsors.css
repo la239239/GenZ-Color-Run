@@ -243,3 +243,108 @@
     .standard-grid { grid-template-columns: repeat(2, 1fr); } /* 2 par ligne sur mobile */
     .sponsor-item { height: 120px; padding: 10px; }
 }
+
+/* --- STYLE COMING SOON (MYSTERY CARDS) --- */
+
+.teasing-text {
+    color: #ccc;
+    font-style: italic;
+    margin-bottom: 30px;
+    font-family: 'Orbitron', sans-serif; /* Style futuriste */
+    letter-spacing: 1px;
+    animation: blinkText 2s infinite;
+}
+
+@keyframes blinkText {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.mystery-card {
+    height: 200px;
+    background: rgba(0, 0, 0, 0.6); /* Fond sombre transparent */
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    /* Bordure en pointillés pour l'effet "emplacement vide" */
+    border: 2px dashed #555; 
+    transition: all 0.3s ease;
+}
+
+.mystery-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.mystery-icon {
+    font-size: 5rem;
+    font-weight: 900;
+    font-family: 'Orbitron', sans-serif;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.mystery-label {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    color: white;
+}
+
+/* COULEURS ET ANIMATIONS NÉON */
+
+/* 1. Rose (Pink) */
+.pink-glow {
+    border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
+    animation: pulse-pink 2s infinite;
+}
+.pink-glow .mystery-icon { color: var(--primary); }
+
+@keyframes pulse-pink {
+    0% { box-shadow: 0 0 10px rgba(255, 0, 127, 0.2); }
+    50% { box-shadow: 0 0 25px rgba(255, 0, 127, 0.6); border-style: solid; }
+    100% { box-shadow: 0 0 10px rgba(255, 0, 127, 0.2); }
+}
+
+/* 2. Bleu (Blue) */
+.blue-glow {
+    border-color: var(--secondary);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+    animation: pulse-blue 2s infinite ease-in-out;
+    animation-delay: 0.5s; /* Décalage pour que ça ne clignote pas tout en même temps */
+}
+.blue-glow .mystery-icon { color: var(--secondary); }
+
+@keyframes pulse-blue {
+    0% { box-shadow: 0 0 10px rgba(0, 212, 255, 0.2); }
+    50% { box-shadow: 0 0 25px rgba(0, 212, 255, 0.6); border-style: solid; }
+    100% { box-shadow: 0 0 10px rgba(0, 212, 255, 0.2); }
+}
+
+/* 3. Jaune (Yellow/Accent) */
+.yellow-glow {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(204, 255, 0, 0.2);
+    animation: pulse-yellow 2s infinite ease-in-out;
+    animation-delay: 1s;
+}
+.yellow-glow .mystery-icon { color: var(--accent); }
+
+@keyframes pulse-yellow {
+    0% { box-shadow: 0 0 10px rgba(204, 255, 0, 0.2); }
+    50% { box-shadow: 0 0 25px rgba(204, 255, 0, 0.6); border-style: solid; }
+    100% { box-shadow: 0 0 10px rgba(204, 255, 0, 0.2); }
+}
+
+/* Petit effet au survol */
+.mystery-card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.05);
+}

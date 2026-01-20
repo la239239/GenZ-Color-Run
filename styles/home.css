@@ -1,4 +1,4 @@
-/* --- home.css --- */
+/* --- styles/home.css --- */
 
 /* 1. HERO SECTION & COMPTE À REBOURS */
 .hero {
@@ -7,7 +7,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(45deg, rgba(255, 0, 127, 0.3), rgba(0, 212, 255, 0.3)), url('https://via.placeholder.com/1920x1080');
+    /* Pense à remettre ton image de fond ici si tu en avais une différente du placeholder */
+    background: linear-gradient(45deg, rgba(255, 0, 127, 0.4), rgba(0, 212, 255, 0.4)), url('../assets/hero_bg.jpg'); 
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -19,6 +20,7 @@
     margin-bottom: 5px;
     text-transform: uppercase;
     font-weight: 800;
+    font-family: 'Orbitron', sans-serif;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
@@ -47,6 +49,7 @@
     font-size: 4rem;
     font-weight: 900;
     line-height: 1;
+    font-family: 'Orbitron', sans-serif;
     background: linear-gradient(45deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     background-clip: text;
@@ -71,12 +74,14 @@
     .time-label { font-size: 0.8rem; }
 }
 
-/* 2. SECTION PRÉSENTATION (Avec tes marges corrigées) */
+/* 2. SECTION PRÉSENTATION (Le Projet) */
 .presentation {
     padding: 80px 20px;
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    /* S'assure que le fond est bien celui du body */
+    background-color: var(--dark); 
 }
 
 .presentation h2 {
@@ -93,12 +98,102 @@
     line-height: 1.8;
 }
 
-/* 3. CARROUSEL PARFAIT */
+/* 3. SECTION QUI SOMMES-NOUS (Version DARK) */
+.about-us {
+    background-color: var(--dark); /* Fond sombre */
+    padding: 5rem 2rem;
+    color: var(--light); /* Texte clair */
+    border-top: 3px solid var(--primary); /* Séparateur rose subtil */
+    border-bottom: 3px solid var(--secondary); /* Séparateur bleu subtil */
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--secondary); /* Titre en cyan comme le reste du site */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.about-block {
+    margin-bottom: 3rem;
+    padding-left: 1.5rem;
+    /* Barre latérale en dégradé pour le style */
+    border-image: linear-gradient(to bottom, var(--primary), var(--secondary)) 1 100%;
+    border-left-width: 4px;
+    border-left-style: solid;
+}
+
+.about-block h3 {
+    font-size: 1.8rem;
+    color: var(--light);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.about-block p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: #ccc; /* Gris clair pour le texte courant */
+}
+
+/* Liste des partenaires (Food trucks / HC Mouscron) en mode sombre */
+.partners-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.partners-list li {
+    /* Fond sombre légèrement transparent pour un effet "carte" */
+    background-color: rgba(255, 255, 255, 0.05); 
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    border-left: 5px solid var(--accent); /* Vert fluo pour faire ressortir */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    color: var(--light);
+}
+
+.partners-list strong {
+    color: var(--secondary); /* Mettre en valeur les noms en cyan */
+}
+
+@media (max-width: 768px) {
+    .about-text h2 { font-size: 2.2rem; }
+    .about-block {
+        border-left: none;
+        padding-left: 0;
+        border-image: linear-gradient(to right, var(--primary), var(--secondary)) 1 100%;
+        border-top-width: 4px;
+        border-top-style: solid;
+        padding-top: 1rem;
+    }
+}
+
+/* 4. CARROUSEL */
 .carousel-section {
     padding: 60px 0;
     text-align: center;
     background: var(--dark);
     overflow: hidden;
+}
+
+.carousel-section h2 {
+    color: var(--light);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    font-weight: 800;
 }
 
 .carousel-container {
