@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: center;
     /* Pense à remettre ton image de fond ici si tu en avais une différente du placeholder */
-    background: linear-gradient(45deg, rgba(255, 0, 127, 0.4), rgba(0, 212, 255, 0.4)), url('../assets/hero_bg.jpg'); 
+    background: linear-gradient(45deg, rgba(255, 0, 127, 0.4), rgba(0, 212, 255, 0.4)), url('../assets/hero_bg.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -21,7 +21,7 @@
     text-transform: uppercase;
     font-weight: 800;
     font-family: 'Orbitron', sans-serif;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero .location {
@@ -55,7 +55,7 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .time-label {
@@ -68,10 +68,21 @@
 }
 
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
-    .countdown { gap: 15px; }
-    .time-number { font-size: 2.5rem; }
-    .time-label { font-size: 0.8rem; }
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .countdown {
+        gap: 15px;
+    }
+
+    .time-number {
+        font-size: 2.5rem;
+    }
+
+    .time-label {
+        font-size: 0.8rem;
+    }
 }
 
 /* 2. SECTION PRÉSENTATION (Le Projet) */
@@ -81,7 +92,7 @@
     margin: 0 auto;
     text-align: center;
     /* S'assure que le fond est bien celui du body */
-    background-color: var(--dark); 
+    background-color: var(--dark);
 }
 
 .presentation h2 {
@@ -100,11 +111,15 @@
 
 /* 3. SECTION QUI SOMMES-NOUS (Version DARK) */
 .about-us {
-    background-color: var(--dark); /* Fond sombre */
+    background-color: var(--dark);
+    /* Fond sombre */
     padding: 5rem 2rem;
-    color: var(--light); /* Texte clair */
-    border-top: 3px solid var(--primary); /* Séparateur rose subtil */
-    border-bottom: 3px solid var(--secondary); /* Séparateur bleu subtil */
+    color: var(--light);
+    /* Texte clair */
+    border-top: 3px solid var(--primary);
+    /* Séparateur rose subtil */
+    border-bottom: 3px solid var(--secondary);
+    /* Séparateur bleu subtil */
 }
 
 .about-container {
@@ -116,7 +131,8 @@
     font-size: 3rem;
     text-align: center;
     margin-bottom: 3rem;
-    color: var(--secondary); /* Titre en cyan comme le reste du site */
+    color: var(--secondary);
+    /* Titre en cyan comme le reste du site */
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 800;
@@ -142,7 +158,8 @@
     font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 1rem;
-    color: #ccc; /* Gris clair pour le texte courant */
+    color: #ccc;
+    /* Gris clair pour le texte courant */
 }
 
 /* Liste des partenaires (Food trucks / HC Mouscron) en mode sombre */
@@ -154,22 +171,27 @@
 
 .partners-list li {
     /* Fond sombre légèrement transparent pour un effet "carte" */
-    background-color: rgba(255, 255, 255, 0.05); 
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 1rem;
     margin-bottom: 0.5rem;
     border-radius: 8px;
     font-size: 1.05rem;
-    border-left: 5px solid var(--accent); /* Vert fluo pour faire ressortir */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    border-left: 5px solid var(--accent);
+    /* Vert fluo pour faire ressortir */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     color: var(--light);
 }
 
 .partners-list strong {
-    color: var(--secondary); /* Mettre en valeur les noms en cyan */
+    color: var(--secondary);
+    /* Mettre en valeur les noms en cyan */
 }
 
 @media (max-width: 768px) {
-    .about-text h2 { font-size: 2.2rem; }
+    .about-text h2 {
+        font-size: 2.2rem;
+    }
+
     .about-block {
         border-left: none;
         padding-left: 0;
@@ -217,14 +239,14 @@
     display: flex;
     height: 100%;
     transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-    transform: translateX(25%); 
+    transform: translateX(25%);
 }
 
 .slide {
-    flex: 0 0 50%; 
+    flex: 0 0 50%;
     max-width: 50%;
     height: 100%;
-    padding: 0 20px; 
+    padding: 0 20px;
     box-sizing: border-box;
     opacity: 0.3;
     transform: scale(0.85);
@@ -240,7 +262,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     transition: all 0.5s ease;
 }
 
@@ -251,7 +273,7 @@
 }
 
 .slide.active img {
-    border: 4px solid var(--primary); 
+    border: 4px solid var(--primary);
     box-shadow: 0 0 25px var(--primary), 0 0 10px var(--secondary);
 }
 
@@ -260,7 +282,7 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 20;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     color: var(--secondary);
     border: 2px solid var(--secondary);
     font-size: 2rem;
@@ -280,11 +302,56 @@
     transform: translateY(-50%) scale(1.1);
 }
 
-.prev-btn { left: 5%; }
-.next-btn { right: 5%; }
+.prev-btn {
+    left: 5%;
+}
+
+.next-btn {
+    right: 5%;
+}
 
 @media (max-width: 768px) {
-    .carousel-container { height: 300px; }
-    .slide { flex: 0 0 85%; max-width: 85%; padding: 0 10px; }
-    .carousel-track { transform: translateX(7.5%); }
+    .carousel-container {
+        height: 300px;
+    }
+
+    .slide {
+        flex: 0 0 85%;
+        max-width: 85%;
+        padding: 0 10px;
+    }
+
+    .carousel-track {
+        transform: translateX(7.5%);
+    }
+}
+
+
+/* Bouton Pause/Reprendre – centré en bas */
+.pause-btn {
+    bottom: 5%;
+    left: 49%;
+    top: auto;
+    /* neutralise le centrage vertical des autres boutons */
+    font-size: 1.2rem;
+    /* un peu plus petit que les flèches */
+    width: 46px;
+    height: 46px;
+}
+
+/* Option: quand c'est en pause, tu peux changer la couleur */
+.pause-btn[aria-pressed="true"] {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 0 15px var(--primary);
+}
+
+@media (max-width: 768px) {
+    .pause-btn {
+        bottom: 8%;
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+    }
 }

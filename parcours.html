@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les Parcours - GenZ Color Run 2026</title>
-    
+
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/parcours.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="48x48">
-  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="192x192">
-  <link rel="shortcut icon" href="assets/favicon.png">
-    <meta name="description" content="GenZ Color Run 2026 à Mouscron : 5km, 10km, musique et poudre colorée ! Rejoins l'événement le plus fun de l'année à la Plaine de Neckere.">
-<meta name="keywords" content="Color Run, Mouscron, Course à pied, 5km, 10km, GenZ, Running Club, Belgique, Fun Run">
-<meta name="author" content="GenZ Running Club">
+    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="192x192">
+    <link rel="shortcut icon" href="assets/favicon.png">
+    <meta name="description"
+        content="GenZ Color Run 2026 à Mouscron : 5km, 10km, musique et poudre colorée ! Rejoins l'événement le plus fun de l'année à la Plaine de Neckere.">
+    <meta name="keywords"
+        content="Color Run, Mouscron, Course à pied, 5km, 10km, GenZ, Running Club, Belgique, Fun Run">
+    <meta name="author" content="GenZ Running Club">
 
-<meta property="og:title" content="GenZ Color Run 2026 - Mouscron">
-<meta property="og:description" content="Prêt pour la course la plus colorée de l'année ? Inscriptions ouvertes pour le 5km et 10km !">
-<meta property="og:image" content="https://genzcolorrun.netlify.app/assets/favicon.png"> <meta property="og:url" content="genzcolorrun.netlify.app">
-<meta property="og:type" content="website">
+    <meta property="og:title" content="GenZ Color Run 2026 - Mouscron">
+    <meta property="og:description"
+        content="Prêt pour la course la plus colorée de l'année ? Inscriptions ouvertes pour le 5km et 10km !">
+    <meta property="og:image" content="https://genzcolorrun.netlify.app/assets/favicon.png">
+    <meta property="og:url" content="genzcolorrun.netlify.app">
+    <meta property="og:type" content="website">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/parcours.js"></script>
 </head>
+
 <body>
 
     <nav>
@@ -30,7 +44,8 @@
         <ul class="nav-links">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="inscription.html">Inscription</a></li>
-            </li> <li><a href="sponsors.html">Sponsors</a></li>
+            </li>
+            <li><a href="sponsors.html">Sponsors</a></li>
             <li><a href="parcours.html" class="active">Parcours</a>
             <li><a href="benevoles.html">Bénévoles</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -43,19 +58,20 @@
         <p>Découvre ce qui t'attend à la Plaine de Neckere</p>
     </header>
 
-   <section class="courses-section">
-        
+    <section class="courses-section">
+
         <div class="course-card pink-theme">
+
             <div class="map-visual">
-                <iframe 
-                    src="https://www.google.com/maps/d/u/0/embed?mid=1s3TofRD3W0ECl-9PewygvCYHSb6dcVs&ehbc=2E312F">
-                </iframe>
+                <div id="map-5km" class="map-container"></div>
                 <span class="badge">Accessible à tous</span>
             </div>
+
             <div class="course-info">
                 <h2>Le Fun Run <span>(5km)</span></h2>
-                <p>Un parcours plat et festif, idéal pour les familles, les débutants ou ceux qui veulent juste profiter des jets de couleurs sans pression.</p>
-                
+                <p>Un parcours plat et festif, idéal pour les familles, les débutants ou ceux qui veulent juste profiter
+                    des jets de couleurs sans pression.</p>
+
                 <div class="stats-grid">
                     <div class="stat-item">
                         <span class="icon">📏</span>
@@ -86,16 +102,17 @@
         </div>
 
         <div class="course-card blue-theme">
+
             <div class="map-visual">
-                <iframe 
-                    src="https://www.google.com/maps/d/u/0/embed?mid=1tzhp0NZcCNMGsVDaYRuDlMTbP9gDf2w&ehbc=2E312F">
-                </iframe>
+                <div id="map-10km" class="map-container"></div>
                 <span class="badge">Challenge Sportif</span>
             </div>
+
             <div class="course-info">
                 <h2>Le Challenge <span>(10km)</span></h2>
-                <p>Une boucle double avec une extension vers le parc communal. Parfait pour chasser le chrono tout en restant fun. N'oublie pas le ravito gourmand !</p>
-                
+                <p>Une boucle double avec une extension vers le parc communal. Parfait pour chasser le chrono tout en
+                    restant fun. N'oublie pas le ravito gourmand !</p>
+
                 <div class="stats-grid">
                     <div class="stat-item">
                         <span class="icon">📏</span>
@@ -140,13 +157,14 @@
     <footer>
         <div class="footer-content">
             <p>&copy; 2026 GenZ Color Run - Mouscron</p>
-            <span class="separator">|</span> 
+            <span class="separator">|</span>
             <a href="faq.html" class="footer-link">D'autres questions ? <strong>FAQ</strong></a>
-            <span class="separator">|</span> 
+            <span class="separator">|</span>
             <a href="legales.html" class="footer-link">Mentions Légales</a>
         </div>
     </footer>
 
     <script src="script/script.js"></script>
 </body>
+
 </html>
