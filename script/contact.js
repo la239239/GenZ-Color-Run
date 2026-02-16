@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // On sélectionne la bonne option dans le menu
             subjectSelect.value = sujet;
 
-            // 3. SPÉCIAL SPONSOR : On pré-remplit le message avec humour
-            if (sujet === 'sponsor' && messageArea) {
+            // 3. SPÉCIAL partenaire : On pré-remplit le message avec humour
+            if (sujet === 'partenaire' && messageArea) {
                 const funnyMessage = "Salut la team !\n\nJ'ai très envie de rejoindre l'aventure GenZ.\nQue ce soit pour faire courir mon logo (sans qu'il transpire) ou afficher ma plus belle bâche sur le parcours, je suis chaud !\n\nEnvoyez-moi le dossier de sponsoring qu'on regarde ça ensemble.";
                 
                 messageArea.value = funnyMessage;

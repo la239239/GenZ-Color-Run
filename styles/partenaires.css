@@ -1,4 +1,4 @@
-/* --- sponsors.css - feuille style--- */
+/* --- partenaires.css - feuille style--- */
 
 /* On réutilise le style du header de page (si tu ne l'as pas mis dans style.css, laisse-le ici) */
 .page-header {
@@ -19,7 +19,7 @@
 
 
 /* SECTION PRINCIPALE */
-.sponsors-section {
+.partenaires-section {
     padding: 60px 20px;
     background-color: var(--dark);
     text-align: center;
@@ -27,7 +27,7 @@
     margin: 0 auto;
 }
 
-.sponsors-category h2 {
+.partenaires-category h2 {
     color: white;
     font-size: 2rem;
     margin-bottom: 40px;
@@ -165,12 +165,12 @@
     align-items: center;
 }
 
-/* Grille pour les GROS sponsors (3 colonnes max) */
+/* Grille pour les GROS partenaires (3 colonnes max) */
 .main-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-/* Grille pour les PETITS sponsors (plus serrés, 4 colonnes max) */
+/* Grille pour les PETITS partenaires (plus serrés, 4 colonnes max) */
 .standard-grid {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
