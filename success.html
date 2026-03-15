@@ -4,25 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="48x48">
-  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="192x192">
-  <link rel="shortcut icon" href="assets/favicon.png">
+    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="192x192">
+    <link rel="shortcut icon" href="assets/favicon.png">
     <title>Message envoyé !</title>
     <link rel="stylesheet" href="styles/style.css">
     <style>
-        .success-container { text-align: center; padding: 100px 20px; }
-        .success-icon { font-size: 50px; }
+        .success-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .success-icon { font-size: 60px; margin-bottom: 20px; }
+        .success-container h1 { font-size: 2.5rem; margin-bottom: 15px; color: white; }
+        .success-container p { color: #aaa; font-size: 1.1rem; margin-bottom: 40px; max-width: 500px; }
+        .success-socials {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .success-socials a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            color: white;
+            transition: transform 0.3s, filter 0.3s;
+        }
+        .success-socials a:hover { transform: translateY(-3px); filter: brightness(1.15); }
+        .success-socials .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .success-socials .facebook  { background: #1877f2; }
+        .success-socials .tiktok    { background: linear-gradient(45deg, #69C9D0, #EE1D52); }
+        .success-label { color: #666; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
     </style>
 </head>
 <body>
-    <nav><div class="logo">GenZ <span>Color Run</span></div></nav>
-    
+    <nav>
+        <div class="logo">GenZ <span>Color Run</span></div>
+        <div class="hamburger">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="inscription.html">Inscription</a></li>
+            <li><a href="partenaires.html">Partenaires</a></li>
+            <li><a href="parcours.html">Parcours</a></li>
+            <li><a href="benevoles.html">Bénévoles</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+
     <div class="success-container">
         <div class="success-icon">🎉</div>
         <h1>Message bien reçu !</h1>
         <p>Merci de nous avoir contactés. La team GenZ te répondra très vite.</p>
-        <br>
         <a href="/" class="btn-main">Retour à l'accueil</a>
+
+        <p class="success-label" style="margin-top: 50px;">En attendant, suis l'aventure !</p>
+        <div class="success-socials">
+            <a href="https://www.instagram.com/genz.colorrun?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="instagram">Instagram</a>
+            <a href="https://www.facebook.com/groups/651619187902214/" target="_blank" rel="noopener" class="facebook">Facebook</a>
+            <a href="https://www.tiktok.com/@runningmouscron?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener" class="tiktok">TikTok</a>
+        </div>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 GenZ Color Run - Mouscron</p>
+            <span class="separator">|</span>
+            <a href="faq.html" class="footer-link">D'autres questions ? <strong>FAQ</strong></a>
+            <span class="separator">|</span>
+            <a href="legales.html" class="footer-link">Mentions Légales</a>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
 </body>
 </html>

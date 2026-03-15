@@ -8,9 +8,17 @@
     align-items: center;
     justify-content: center;
     /* Pense à remettre ton image de fond ici si tu en avais une différente du placeholder */
-    background: linear-gradient(45deg, rgba(255, 0, 127, 0.4), rgba(0, 212, 255, 0.4)), url('../assets/hero_bg.jpg');
-    background-size: cover;
-    background-position: center;
+    background: 
+        linear-gradient(125deg, 
+            rgba(255, 0, 127, 0.35) 0%, 
+            rgba(26, 26, 26, 0.95) 40%, 
+            rgba(0, 212, 255, 0.3) 100%
+        ),
+        radial-gradient(ellipse at 20% 50%, rgba(255, 0, 127, 0.2) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(0, 212, 255, 0.2) 0%, transparent 60%),
+        var(--dark);
+    background-attachment: fixed;
+    animation: heroShift 8s ease-in-out infinite alternate;
     text-align: center;
     padding: 0 20px;
 }
@@ -202,30 +210,57 @@
     }
 }
 
-/* 4. CARROUSEL */
+/* 4. CARROUSEL — 2026 edition */
 .carousel-section {
-    padding: 60px 0;
+    padding: 80px 0 60px;
     text-align: center;
     background: var(--dark);
     overflow: hidden;
+    position: relative;
+}
+
+/* Ligne déco au dessus */
+.carousel-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 10%; right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
 }
 
 .carousel-section h2 {
     color: var(--light);
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     text-transform: uppercase;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     font-weight: 800;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Underline dégradé sous le titre */
+.carousel-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; left: 50%;
+    transform: translateX(-50%);
+    width: 60px; height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
 }
 
 .carousel-container {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    height: 450px;
+    height: 480px;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Touch area */
+    touch-action: pan-y;
+    user-select: none;
 }
 
 .carousel-window {
@@ -238,19 +273,21 @@
 .carousel-track {
     display: flex;
     height: 100%;
-    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform: translateX(25%);
+    will-change: transform;
 }
 
+/* Slide de base */
 .slide {
     flex: 0 0 50%;
     max-width: 50%;
     height: 100%;
-    padding: 0 20px;
+    padding: 0 12px;
     box-sizing: border-box;
-    opacity: 0.3;
-    transform: scale(0.85);
-    transition: all 0.5s ease;
+    opacity: 0.25;
+    transform: scale(0.82);
+    transition: opacity 0.5s ease, transform 0.5s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -261,11 +298,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    transition: all 0.5s ease;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    transition: border-radius 0.5s ease, box-shadow 0.5s ease;
+    display: block;
 }
 
+/* Slide active */
 .slide.active {
     opacity: 1;
     transform: scale(1);
@@ -273,85 +312,144 @@
 }
 
 .slide.active img {
-    border: 4px solid var(--primary);
-    box-shadow: 0 0 25px var(--primary), 0 0 10px var(--secondary);
+    border-radius: 20px;
+    box-shadow:
+        0 0 0 2px var(--primary),
+        0 0 30px rgba(255,0,127,0.35),
+        0 0 60px rgba(0,212,255,0.15),
+        0 25px 50px rgba(0,0,0,0.7);
 }
 
+/* Indicateurs de position (dots) */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 28px;
+}
+
+.carousel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #333;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background: var(--primary);
+    width: 24px;
+    border-radius: 3px;
+    box-shadow: 0 0 8px rgba(255,0,127,0.5);
+}
+
+/* Boutons nav */
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 20;
-    background: rgba(0, 0, 0, 0.6);
-    color: var(--secondary);
-    border: 2px solid var(--secondary);
-    font-size: 2rem;
-    width: 50px;
-    height: 50px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 1.4rem;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carousel-btn:hover {
     background: var(--primary);
     border-color: var(--primary);
-    color: white;
-    box-shadow: 0 0 15px var(--primary);
-    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 20px rgba(255,0,127,0.4);
+    transform: translateY(-50%) scale(1.08);
 }
 
-.prev-btn {
-    left: 5%;
+.prev-btn { left: 16px; }
+.next-btn { right: 16px; }
+
+/* Bouton pause */
+.pause-btn {
+    bottom: -56px;
+    left: 50%;
+    top: auto;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    width: 36px;
+    height: 36px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
 }
 
-.next-btn {
-    right: 5%;
+.pause-btn:hover {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.08);
+    background: rgba(0,0,0,0.5);
+    box-shadow: none;
 }
 
+.pause-btn[aria-pressed="true"] {
+    background: rgba(255,0,127,0.2);
+    border-color: var(--primary);
+    color: var(--primary);
+    opacity: 0.8;
+    box-shadow: none;
+}
+
+/* ---- MOBILE ---- */
 @media (max-width: 768px) {
     .carousel-container {
-        height: 300px;
+        height: 320px;
+        /* Curseur grab sur mobile */
+        cursor: grab;
+    }
+
+    .carousel-container.dragging {
+        cursor: grabbing;
     }
 
     .slide {
-        flex: 0 0 85%;
-        max-width: 85%;
-        padding: 0 10px;
+        flex: 0 0 88%;
+        max-width: 88%;
+        padding: 0 8px;
+        opacity: 0.3;
+        transform: scale(0.88);
+    }
+
+    .slide.active {
+        opacity: 1;
+        transform: scale(1);
     }
 
     .carousel-track {
-        transform: translateX(7.5%);
+        transform: translateX(6%);
     }
-}
 
+    /* Cacher les boutons nav sur mobile — swipe suffit */
+    .prev-btn, .next-btn { display: none; }
 
-/* Bouton Pause/Reprendre – centré en bas */
-.pause-btn {
-    bottom: 5%;
-    left: 49%;
-    top: auto;
-    /* neutralise le centrage vertical des autres boutons */
-    font-size: 1.2rem;
-    /* un peu plus petit que les flèches */
-    width: 46px;
-    height: 46px;
-}
+    /* Dots plus grands sur mobile (zone de tap) */
+    .carousel-dot { width: 8px; height: 8px; }
+    .carousel-dot.active { width: 28px; }
 
-/* Option: quand c'est en pause, tu peux changer la couleur */
-.pause-btn[aria-pressed="true"] {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: white;
-    box-shadow: 0 0 15px var(--primary);
-}
-
-@media (max-width: 768px) {
     .pause-btn {
-        bottom: 8%;
-        width: 42px;
-        height: 42px;
-        font-size: 1.1rem;
+        bottom: -48px;
+        width: 32px;
+        height: 32px;
     }
+}
+
+@media (max-width: 480px) {
+    .carousel-container { height: 260px; }
+    .carousel-section h2 { font-size: 1.8rem; }
 }

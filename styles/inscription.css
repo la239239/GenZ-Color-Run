@@ -3,7 +3,7 @@
 /* 1. HEADER DE PAGE (Plus petit que le Hero de l'accueil) */
 .page-header {
     height: 40vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x600'); /* Mets une photo de coureurs ici */
+    background: linear-gradient(135deg, rgba(255,0,127,0.2) 0%, rgba(26,26,26,0) 50%, rgba(0,212,255,0.15) 100%), linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85));
     background-size: cover;
     background-position: center;
     display: flex;
@@ -156,4 +156,27 @@
     .page-header { height: 30vh; }
     .page-header h1 { font-size: 2rem; }
     .price-card { width: 100%; max-width: 350px; } /* Prend toute la largeur sur mobile */
+}
+/* Effet grille subtile sur le page-header */
+.page-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(#ff007f15 1px, transparent 1px),
+        linear-gradient(90deg, #ff007f15 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-header h1,
+.page-header p {
+    position: relative;
+    z-index: 1;
 }

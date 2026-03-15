@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
             subjectSelect.value = sujet;
 
             // 3. SPÉCIAL partenaire : On pré-remplit le message avec humour
-            if (sujet === 'partenaire' && messageArea) {
-                const funnyMessage = "Salut la team !\n\nJ'ai très envie de rejoindre l'aventure GenZ.\nQue ce soit pour faire courir mon logo (sans qu'il transpire) ou afficher ma plus belle bâche sur le parcours, je suis chaud !\n\nEnvoyez-moi le dossier de sponsoring qu'on regarde ça ensemble.";
+            if (sujet === 'sponsor' && messageArea) {
+                const funnyMessage = "Bonjour,\n\nJe représente [Nom de votre entreprise] et je souhaite me renseigner sur les opportunités de partenariat pour la GenZ Color Run 2026.\n\nNous sommes intéressés par une visibilité lors de cet événement et aimerions recevoir votre dossier de sponsoring.\n\nCordialement,\n[Votre nom]";
                 
                 messageArea.value = funnyMessage;
 

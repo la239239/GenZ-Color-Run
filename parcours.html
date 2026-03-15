@@ -28,10 +28,6 @@
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
-    <script src="script/script.js"></script>
-    <script src="script/parcours.js"></script>
 </head>
 
 <body>
@@ -56,6 +52,8 @@
     <header class="page-header">
         <h1>Le Terrain <span>de Jeu</span></h1>
         <p>Découvre ce qui t'attend à la Plaine de Neckere</p>
+            <div id="mini-countdown" class="mini-countdown" aria-label="Compte à rebours avant l'événement"></div>
+        <p class="mini-countdown-date">5 Juillet 2026 · Plaine de Neckere, Mouscron</p>
     </header>
 
     <section class="courses-section">
@@ -164,7 +162,10 @@
         </div>
     </footer>
 
-    <script src="script/script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js" defer></script>
+    <script src="script/script.js" defer></script>
+    <script src="script/parcours.js" defer></script>
 </body>
 
 </html>

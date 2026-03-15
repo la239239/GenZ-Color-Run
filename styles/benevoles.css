@@ -3,18 +3,34 @@
 /* HEADER (Standard mais avec accent orange) */
 .page-header {
     height: 40vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x600?text=EQUIPE+BENEVOLES'); 
-    background-size: cover;
-    background-position: center;
+    background:
+        linear-gradient(135deg, rgba(255,136,0,0.25) 0%, rgba(26,26,26,0) 50%, rgba(255,85,0,0.15) 100%),
+        linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85));
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     border-bottom: 2px solid #ff8800;
+    position: relative;
+    overflow: hidden;
 }
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,136,0,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,136,0,0.07) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-header h1, .page-header p { position: relative; z-index: 1; }
 .page-header h1 { font-size: 3rem; text-transform: uppercase; margin-bottom: 10px; }
-.page-header span { color: #ff8800;  }
+.page-header span { color: #ff8800; }
 
 
 /* SECTION AVANTAGES (PERKS) */
@@ -128,4 +144,119 @@
     background: var(--dark);
     color: white;
     box-shadow: none;
+}
+/* ===== SECTION PROGRAMME / TIMELINE ===== */
+.programme-section {
+    padding: 80px 20px;
+    background: #1e1e1e;
+    border-top: 1px solid #2a2a2a;
+}
+
+.programme-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.programme-container h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+
+.programme-container h2 span { color: #ff8800; }
+
+/* Timeline */
+.timeline {
+    position: relative;
+}
+
+/* Ligne verticale - s'aligne sur la colonne du dot */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 82px; /* 70px (col heure) + 12px (centre du dot) */
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: linear-gradient(to bottom, #ff8800, #ff007f, #00d4ff);
+    opacity: 0.4;
+}
+
+.tl-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 70px 24px 1fr;
+    align-items: start;
+    gap: 0 16px;
+    margin-bottom: 44px;
+}
+
+.tl-item:last-child { margin-bottom: 0; }
+
+/* Heure - première colonne */
+.tl-time {
+    grid-column: 1;
+    text-align: right;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #666;
+    white-space: nowrap;
+    padding-top: 4px;
+}
+
+/* Point - deuxième colonne, centré */
+.tl-dot {
+    grid-column: 2;
+    margin-top: 4px;
+    justify-self: center;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #333;
+    border: 2px solid #555;
+    flex-shrink: 0;
+    transition: 0.3s;
+}
+
+.tl-dot--primary  { background: #ff007f; border-color: #ff007f; box-shadow: 0 0 10px rgba(255,0,127,0.5); }
+.tl-dot--secondary{ background: #00d4ff; border-color: #00d4ff; box-shadow: 0 0 10px rgba(0,212,255,0.5); }
+.tl-dot--accent   { background: #ff8800; border-color: #ff8800; box-shadow: 0 0 10px rgba(255,136,0,0.5); }
+
+/* Contenu */
+.tl-content {
+    grid-column: 3;
+    background: #252525;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px 24px;
+    flex: 1;
+    transition: 0.3s;
+}
+
+.tl-content:hover {
+    border-color: #ff8800;
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(255,136,0,0.1);
+}
+
+.tl-content h3 {
+    color: white;
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+}
+
+.tl-content p {
+    color: #aaa;
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .tl-item { grid-template-columns: 52px 20px 1fr; gap: 0 10px; }
+    .timeline::before { left: 62px; }
+    .tl-time { font-size: 0.72rem; }
 }
