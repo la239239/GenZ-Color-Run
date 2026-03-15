@@ -9,7 +9,7 @@
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url('fonts/orbitron-v35-latin-500.woff2') format('woff2');
+    src: url('../fonts/orbitron-v35-latin-500.woff2') format('woff2');
 }
 
 /* orbitron-900 - latin */
@@ -18,7 +18,7 @@
     font-style: normal;
     font-weight: 900;
     font-display: swap;
-    src: url('fonts/orbitron-v35-latin-900.woff2') format('woff2');
+    src: url('../fonts/orbitron-v35-latin-900.woff2') format('woff2');
 }
 
 :root {
