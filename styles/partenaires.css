@@ -77,19 +77,19 @@
 }
 
 /* 1. LE CONTENEUR PRINCIPAL (La scène 3D) */
-.sponsor-flip-card {
+.soutien-flip-card {
     background-color: transparent;
     perspective: 1000px; /* Donne la profondeur 3D */
     cursor: pointer;
 }
 
 /* Hauteur différente selon la catégorie */
-.main-grid .sponsor-flip-card { height: 200px; }
-.standard-grid .sponsor-flip-card { height: 150px; }
+.main-grid .soutien-flip-card { height: 200px; }
+.standard-grid .soutien-flip-card { height: 150px; }
 
 
 /* 2. L'ÉLÉMENT QUI TOURNE (Le plateau tournant) */
-.sponsor-card-inner {
+.soutien-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
@@ -99,12 +99,12 @@
 }
 
 /* L'ACTION : Au survol, on tourne de 180 degrés */
-.sponsor-flip-card:hover .sponsor-card-inner {
+.soutien-flip-card:hover .soutien-card-inner {
     transform: rotateY(180deg);
 }
 
 /* 3. LES DEUX FACES (AVANT et ARRIÈRE) */
-.sponsor-front, .sponsor-back {
+.soutien-front, .soutien-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -119,30 +119,30 @@
 }
 
 /* --- FACE AVANT (LOGO) --- */
-.sponsor-front {
+.soutien-front {
     background-color: white;
 }
 
-.sponsor-front img {
+.soutien-front img {
     max-width: 80%;
     max-height: 80%;
     object-fit: contain; /* Le logo ne doit pas être coupé */
 }
 
 /* --- FACE ARRIÈRE (PHOTO) --- */
-.sponsor-back {
+.soutien-back {
     background-color: var(--dark);
     color: white;
     transform: rotateY(180deg); /* Elle est déjà retournée au départ */
     border: 2px solid var(--secondary); /* Bordure bleue pour le style */
 }
 
-/* --- AJOUT POUR LE NOM DU SPONSOR --- */
-.sponsor-back {
+/* --- AJOUT POUR LE NOM DU SOUTIEN --- */
+.soutien-back {
     position: relative; /* Sécurité pour le positionnement absolu */
 }
 
-.sponsor-name {
+.soutien-name {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -159,7 +159,7 @@
     border-bottom-right-radius: 13px;
 }
 
-.sponsor-back img {
+.soutien-back img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* La photo remplit tout le cadre */
@@ -167,8 +167,8 @@
 }
 
 /* Petit effet néon quand la carte est retournée */
-.sponsor-flip-card:hover .sponsor-front, 
-.sponsor-flip-card:hover .sponsor-back {
+.soutien-flip-card:hover .soutien-front, 
+.soutien-flip-card:hover .soutien-back {
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
 }
 
@@ -190,8 +190,8 @@
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
-/* ITEM SPONSOR */
-.sponsor-item {
+/* ITEM SOUTIEN */
+.soutien-item {
     background: #ffffff; /* Fond blanc pour bien voir les logos */
     border-radius: 10px;
     padding: 20px;
@@ -203,7 +203,7 @@
     overflow: hidden;
 }
 
-.sponsor-item img {
+.soutien-item img {
     max-width: 100%;
     max-height: 100%;
     
@@ -214,19 +214,19 @@
 }
 
 /* EFFET HOVER */
-.sponsor-item:hover {
+.soutien-item:hover {
     transform: translateY(-5px); /* Monte un peu */
     box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3); /* Ombre bleue */
 }
 
-.sponsor-item:hover img {
+.soutien-item:hover img {
     filter: grayscale(0%); /* Revient en couleur */
     opacity: 1;
     transform: scale(1.05); /* Zoom léger */
 }
 
 /* SECTION APPEL A L'ACTION (BAS DE PAGE) */
-.become-sponsor {
+.rejoindre-aventure {
     padding: 80px 20px;
     background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
     text-align: center;
@@ -256,7 +256,7 @@
 @media (max-width: 768px) {
     .page-header h1 { font-size: 2rem; }
     .standard-grid { grid-template-columns: repeat(2, 1fr); } /* 2 par ligne sur mobile */
-    .sponsor-item { height: 120px; padding: 10px; }
+    .soutien-item { height: 120px; padding: 10px; }
 }
 
 /* --- STYLE COMING SOON (MYSTERY CARDS) --- */
