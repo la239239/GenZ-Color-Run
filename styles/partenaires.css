@@ -358,8 +358,38 @@
     100% { box-shadow: 0 0 10px rgba(204, 255, 0, 0.2); }
 }
 
-/* Petit effet au survol */
-.mystery-card:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.05);
+/* --- GRILLE PRINCIPALE (ARI & Mystery) --- */
+.main-grid .mystery-card,
+.main-grid .soutien-link {
+    height: 180px; /* Réduit de 300px à 180px pour le format rectangle */
+}
+
+.main-grid .soutien-flip-card {
+    height: 100%;
+}
+
+/* --- GRILLE STANDARD (Soutiens) --- */
+.standard-grid .soutien-flip-card {
+    height: 120px; /* Réduit de 150px à 120px */
+}
+
+/* --- AJUSTEMENTS DES CONTENUS --- */
+
+/* On s'assure que les photos au verso remplissent bien le nouveau format */
+.soutien-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* On réduit un peu la taille des logos au recto pour qu'ils respirent */
+.soutien-front img {
+    max-width: 75%;
+    max-height: 65%;
+}
+
+/* On ajuste la taille de la police pour les cartes mystère */
+.main-grid .mystery-icon {
+    font-size: 3.5rem; /* Un peu plus petit pour le rectangle */
+    margin-bottom: 5px;
 }

@@ -37,7 +37,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="inscription.html">Inscription</a></li>
+            <li><a href="inscription.html" class="nav-special">Inscription</a></li>
             <li><a href="Partenaires.html" class="active">Partenaires</a></li>
             <li><a href="parcours.html">Parcours</a></li>
             <li><a href="benevoles.html">Bénévoles</a></li>
@@ -58,10 +58,11 @@
         <div class="partenaires-category">
             <h2>Partenaires Principaux</h2>
 
-            <p class="teasing-text">Chargement en cours... Les gros poissons arrivent ! ⏳</p>
+            <p class="teasing-text">Certains secrets sont enfin révélés... 🚀</p>
 
             <div class="logo-grid main-grid">
 
+                <!-- Mystery Card 1 -->
                 <div class="mystery-card pink-glow">
                     <div class="mystery-content">
                         <span class="mystery-icon">?</span>
@@ -69,13 +70,23 @@
                     </div>
                 </div>
 
-                <div class="mystery-card blue-glow">
-                    <div class="mystery-content">
-                        <span class="mystery-icon">?</span>
-                        <span class="mystery-label">Bientôt</span>
-                    </div>
-                </div>
-
+                <!-- ARI - Partenaire Principal (Version Flip Corrigée) -->
+<a class="soutien-link" href="https://www.ari.be/" target="_blank" rel="noopener" aria-label="Découvrir ARI">
+    <div class="soutien-flip-card">
+        <div class="soutien-card-inner">
+            <!-- Recto : On enlève "mystery-card" qui casse les dimensions -->
+            <div class="soutien-front blue-glow">
+                <img src="assets/ari1.webp" alt="Logo ARI" loading="lazy">
+            </div>
+            <!-- Verso : Photo ARI -->
+            <div class="soutien-back">
+                <img src="assets/ari2.webp" alt="L'équipe ARI" loading="lazy">
+                <div class="soutien-name">ARI</div>
+            </div>
+        </div>
+    </div>
+</a>
+                <!-- Mystery Card 3 -->
                 <div class="mystery-card yellow-glow">
                     <div class="mystery-content">
                         <span class="mystery-icon">?</span>
@@ -137,16 +148,31 @@
                     </div>
                 </a>
 
-                <a class="soutien-link" href="https://www.ari.be/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Ouvrir le site web www.ari.be (nouvel onglet)">
+                <a class="soutien-link" href="https://lemonfood.be/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Ouvrir le site web de Lemon Food (nouvel onglet)">
                     <div class="soutien-flip-card">
                         <div class="soutien-card-inner">
                             <div class="soutien-front">
-                                <img src="assets/ari1.webp" alt="Logo Ari" loading="lazy">
+                                <img src="assets/lemonfood1.webp" alt="Logo Lemon Food" loading="lazy">
                             </div>
                             <div class="soutien-back">
-                                <img src="assets/ari2.webp" alt="Photo Ari" loading="lazy">
-                                <div class="soutien-name">ARI</div>
+                                <img src="assets/lemonfood2.webp" alt="Photo Lemon Food" loading="lazy">
+                                <div class="soutien-name">Lemon Food</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="soutien-link" href="https://www.hcmouscron.be/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Ouvrir le site web du HC Mouscron (nouvel onglet)">
+                    <div class="soutien-flip-card">
+                        <div class="soutien-card-inner">
+                            <div class="soutien-front">
+                                <img src="assets/hand1.webp" alt="Logo HC Mouscron" loading="lazy">
+                            </div>
+                            <div class="soutien-back">
+                                <img src="assets/hand2.webp" alt="Photo HC Mouscron" loading="lazy">
+                                <div class="soutien-name">HC Mouscron</div>
                             </div>
                         </div>
                     </div>
@@ -184,22 +210,7 @@
                         </div>
                     </div>
                 </a>
-
-                <a class="soutien-link" href="https://www.facebook.com/olinvest.be" target="_blank"
-                    rel="noopener noreferrer" aria-label="Ouvrir la page Facebook de OLINVEST (nouvel onglet)">
-                    <div class="soutien-flip-card">
-                        <div class="soutien-card-inner">
-                            <div class="soutien-front">
-                                <img src="assets/oli1.webp" alt="Logo Oli" loading="lazy">
-                            </div>
-                            <div class="soutien-back">
-                                <img src="assets/oli2.webp" alt="Photo Oli" loading="lazy">
-                                <div class="soutien-name">OLINVEST</div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
+                
             </div>
         </div>
 

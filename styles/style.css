@@ -268,3 +268,47 @@ footer {
     .mc-val { font-size: 1.1rem; }
     .mc-item { min-width: 38px; padding: 5px 8px; }
 }
+
+/* Effet spécial pour le lien Inscription dans le menu */
+.nav-links li a.nav-special {
+    color: var(--primary); /* Rose par défaut */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(255, 0, 127, 0.3);
+    animation: pulseInscription 2s infinite;
+    position: relative;
+}
+
+/* On change le dégradé du soulignement pour celui-ci */
+.nav-links li a.nav-special::after {
+    background: linear-gradient(45deg, var(--secondary), var(--primary));
+    height: 4px;
+}
+
+/* Animation de pulsation douce */
+@keyframes pulseInscription {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 0, 127, 0.5);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 15px var(--primary), 0 0 25px var(--primary);
+        color: var(--light); /* Devient blanc brillant au milieu du cycle */
+        transform: scale(1.05);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 0, 127, 0.5);
+        transform: scale(1);
+    }
+}
+
+/* Mobile : On s'assure que ça reste lisible */
+@media (max-width: 768px) {
+    .nav-links li a.nav-special {
+        font-size: 1.8rem; /* Plus gros dans le menu burger */
+        animation: none; /* On stoppe l'animation sur mobile pour éviter la distraction */
+        color: var(--primary);
+        text-shadow: 0 0 10px var(--primary);
+    }
+}
