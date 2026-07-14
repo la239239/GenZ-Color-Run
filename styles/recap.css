@@ -1,0 +1,253 @@
+/* --- styles/recap.css --- */
+/* Styles spécifiques à la page récap 2026 */
+
+.recap-hero {
+    height: auto;
+    min-height: 80vh;
+    padding: 100px 20px 60px;
+}
+
+.recap-eyebrow {
+    color: var(--accent);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.recap-hero .location {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Stats — même esprit visuel que le countdown */
+.recap-stats {
+    display: flex;
+    gap: 30px;
+    margin: 40px 0 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.recap-stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 24px 32px;
+    min-width: 160px;
+}
+
+.recap-stat-number {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.recap-stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--light);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .recap-stats { gap: 15px; }
+    .recap-stat-number { font-size: 2rem; }
+    .recap-stat-box { padding: 18px 22px; min-width: 130px; }
+}
+
+/* Vidéo / reel */
+.recap-video-section {
+    padding: 80px 20px 60px;
+    text-align: center;
+    background: var(--dark);
+}
+
+.recap-video-section h2 {
+    color: var(--light);
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.recap-video-intro {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.recap-reel-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.recap-video-player {
+    width: 100%;
+    max-width: 720px;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: #000;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+}
+
+.recap-video-credit {
+    margin-top: 16px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.recap-video-credit a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.recap-video-credit a:hover {
+    text-decoration: underline;
+}
+
+/* Galerie photos — grille statique (pas de carrousel) */
+.recap-gallery-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: var(--dark);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.recap-gallery-section h2 {
+    color: var(--light);
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.recap-gallery-intro {
+    color: #ccc;
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+}
+
+.recap-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.recap-gallery-item {
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.recap-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.recap-gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+.recap-gallery-links {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.recap-gallery-cta {
+    display: inline-block;
+}
+
+.recap-gallery-cta-alt {
+    background: transparent;
+    border-color: var(--secondary);
+    color: var(--secondary);
+}
+
+.recap-gallery-cta-alt:hover {
+    background: transparent;
+    border-color: var(--secondary);
+    box-shadow: 0 0 15px var(--secondary);
+    color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+    .recap-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+/* Placeholders photos — à remplacer par les vraies images */
+.recap-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 2px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.recap-placeholder span {
+    font-size: 0.9rem;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Section remerciements */
+.recap-thanks {
+    padding: 80px 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--dark);
+}
+
+.recap-thanks h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--secondary);
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.recap-thanks p {
+    font-size: 1.15rem;
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
