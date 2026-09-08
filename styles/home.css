@@ -7,7 +7,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* Pense à remettre ton image de fond ici si tu en avais une différente du placeholder */
     background: 
         linear-gradient(125deg, 
             rgba(255, 0, 127, 0.35) 0%, 
@@ -17,8 +16,8 @@
         radial-gradient(ellipse at 20% 50%, rgba(255, 0, 127, 0.2) 0%, transparent 60%),
         radial-gradient(ellipse at 80% 50%, rgba(0, 212, 255, 0.2) 0%, transparent 60%),
         var(--dark);
-    background-attachment: fixed;
-    animation: heroShift 8s ease-in-out infinite alternate;
+    /* background-attachment: fixed;  ← supprime cette ligne */
+    /* animation: heroShift 8s ease-in-out infinite alternate; ← supprime si @keyframes heroShift n'existe pas ailleurs dans ton CSS */
     text-align: center;
     padding: 0 20px;
 }
