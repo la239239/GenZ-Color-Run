@@ -251,3 +251,104 @@
     line-height: 1.8;
     margin-bottom: 30px;
 }
+
+/* Section presse */
+.recap-press-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: var(--dark);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.recap-press-section h2 {
+    color: var(--light);
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.recap-press-intro {
+    color: #ccc;
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+}
+
+.recap-press-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    text-align: left;
+}
+
+.recap-press-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 28px;
+    text-decoration: none;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recap-press-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--secondary);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.recap-press-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.recap-press-source {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.recap-press-date {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.recap-press-title {
+    color: var(--light);
+    font-size: 1.15rem;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.recap-press-excerpt {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.recap-press-cta {
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.recap-press-card:hover .recap-press-cta {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .recap-press-grid {
+        grid-template-columns: 1fr;
+    }
+}
